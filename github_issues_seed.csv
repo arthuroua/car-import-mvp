@@ -1,0 +1,169 @@
+﻿"Title","Body","Labels","Type","Priority","Epic","Estimate"
+"Data Access & Legal","Legal/data access for Copart + IAA and licensing compliance","mvp,type/epic,priority/highest","Epic","Highest","",""
+"Core Platform","Project foundation: auth roles env logging","mvp,type/epic,priority/highest","Epic","Highest","",""
+"VIN Search & Vehicle Card","VIN search and full vehicle card with timeline","mvp,type/epic,priority/highest","Epic","Highest","",""
+"Ingestion Pipeline","Ingestion jobs dedup and media pipeline","mvp,type/epic,priority/highest","Epic","Highest","",""
+"Landed Cost Calculator","Total landed cost engine and presets","mvp,type/epic,priority/highest","Epic","Highest","",""
+"Max Bid Advisor","Recommended max bid with risk scenarios","mvp,type/epic,priority/highest","Epic","Highest","",""
+"Reports & Broker Workspace","PDF reports and broker workspace","mvp,type/epic,priority/high","Epic","High","",""
+"QA Security Launch","Quality performance security and go-live","mvp,type/epic,priority/highest","Epic","Highest","",""
+"Legal requirements matrix","Create compliance matrix for data usage and display rights
+
+Epic: EP1
+Estimate: 8h","mvp,type/task,priority/highest,epic/ep1","Task","Highest","EP1","8h"
+"Copart data onboarding","Apply and set up Copart data access and credentials
+
+Epic: EP1
+Estimate: 12h","mvp,type/task,priority/highest,epic/ep1","Task","Highest","EP1","12h"
+"IAA B2B onboarding","Apply and set up IAA B2B/Data Service access
+
+Epic: EP1
+Estimate: 12h","mvp,type/task,priority/highest,epic/ep1","Task","Highest","EP1","12h"
+"Source audit fields in DB","Add source fetched_at license_scope fields
+
+Epic: EP1
+Estimate: 6h","mvp,type/task,priority/highest,epic/ep1","Task","Highest","EP1","6h"
+"Monorepo and CI/CD bootstrap","Initialize repo pipelines and environments
+
+Epic: EP2
+Estimate: 10h","mvp,type/task,priority/highest,epic/ep2","Task","Highest","EP2","10h"
+"JWT auth and roles","Implement authentication and role-based access
+
+Epic: EP2
+Estimate: 16h","mvp,type/story,priority/highest,epic/ep2","Story","Highest","EP2","16h"
+"Company/workspace access model","Implement company scoping and permissions
+
+Epic: EP2
+Estimate: 12h","mvp,type/story,priority/highest,epic/ep2","Story","Highest","EP2","12h"
+"Secrets and config management","Set up secret storage and config layers
+
+Epic: EP2
+Estimate: 6h","mvp,type/task,priority/highest,epic/ep2","Task","Highest","EP2","6h"
+"Observability and health checks","Error tracking logs and health endpoints
+
+Epic: EP2
+Estimate: 10h","mvp,type/task,priority/highest,epic/ep2","Task","Highest","EP2","10h"
+"VIN normalizer and validator","Normalize and validate 17-char VIN input
+
+Epic: EP3
+Estimate: 6h","mvp,type/story,priority/highest,epic/ep3","Story","Highest","EP3","6h"
+"Search API with cache","Build GET /search with cache strategy
+
+Epic: EP3
+Estimate: 14h","mvp,type/story,priority/highest,epic/ep3","Story","Highest","EP3","14h"
+"Vehicle card aggregator API","Aggregate lots prices images into one payload
+
+Epic: EP3
+Estimate: 16h","mvp,type/story,priority/highest,epic/ep3","Story","Highest","EP3","16h"
+"Frontend VIN search page","Build search interface with fast feedback
+
+Epic: EP3
+Estimate: 14h","mvp,type/story,priority/highest,epic/ep3","Story","Highest","EP3","14h"
+"Frontend vehicle card + timeline","Build card UI with event timeline
+
+Epic: EP3
+Estimate: 20h","mvp,type/story,priority/highest,epic/ep3","Story","Highest","EP3","20h"
+"Queue workers and scheduler","Set up job queue and scheduling
+
+Epic: EP4
+Estimate: 16h","mvp,type/task,priority/highest,epic/ep4","Task","Highest","EP4","16h"
+"Copart ingestion connector","Implement Copart ingestion adapter
+
+Epic: EP4
+Estimate: 20h","mvp,type/story,priority/highest,epic/ep4","Story","Highest","EP4","20h"
+"IAA ingestion connector","Implement IAA ingestion adapter
+
+Epic: EP4
+Estimate: 20h","mvp,type/story,priority/highest,epic/ep4","Story","Highest","EP4","20h"
+"Dedup rules VIN+lot","Prevent duplicate lot records
+
+Epic: EP4
+Estimate: 12h","mvp,type/story,priority/highest,epic/ep4","Story","Highest","EP4","12h"
+"Images ingestion + checksum","Store images with checksum for dedup
+
+Epic: EP4
+Estimate: 14h","mvp,type/story,priority/highest,epic/ep4","Story","Highest","EP4","14h"
+"Retry backoff DLQ alerts","Add resilience and operational alerts
+
+Epic: EP4
+Estimate: 12h","mvp,type/task,priority/highest,epic/ep4","Task","Highest","EP4","12h"
+"Nightly reconciliation job","Verify feed consistency every night
+
+Epic: EP4
+Estimate: 10h","mvp,type/task,priority/high,epic/ep4","Task","High","EP4","10h"
+"Cost profile model","Create DB model for port broker customs defaults
+
+Epic: EP5
+Estimate: 10h","mvp,type/story,priority/highest,epic/ep5","Story","Highest","EP5","10h"
+"Calculator engine v1","Compute landed cost components
+
+Epic: EP5
+Estimate: 16h","mvp,type/story,priority/highest,epic/ep5","Story","Highest","EP5","16h"
+"Calculator UI + presets","Build calculator forms and presets
+
+Epic: EP5
+Estimate: 14h","mvp,type/story,priority/highest,epic/ep5","Story","Highest","EP5","14h"
+"UA/EU customs templates v1","Add first customs formulas templates
+
+Epic: EP5
+Estimate: 12h","mvp,type/story,priority/highest,epic/ep5","Story","Highest","EP5","12h"
+"Low/base/high scenarios","Expose scenario-based outputs
+
+Epic: EP5
+Estimate: 10h","mvp,type/story,priority/highest,epic/ep5","Story","Highest","EP5","10h"
+"MaxBid algorithm + explainability","Compute max bid and explain factors
+
+Epic: EP6
+Estimate: 14h","mvp,type/story,priority/highest,epic/ep6","Story","Highest","EP6","14h"
+"Advisor calculate API","Build POST /advisor/calculate endpoint
+
+Epic: EP6
+Estimate: 10h","mvp,type/story,priority/highest,epic/ep6","Story","Highest","EP6","10h"
+"MaxBid UI block","Show recommended max bid with scenario tabs
+
+Epic: EP6
+Estimate: 12h","mvp,type/story,priority/highest,epic/ep6","Story","Highest","EP6","12h"
+"Assumptions versioning","Store assumptions and version metadata
+
+Epic: EP6
+Estimate: 8h","mvp,type/task,priority/high,epic/ep6","Task","High","EP6","8h"
+"PDF report generation","Generate client-facing PDF report
+
+Epic: EP7
+Estimate: 14h","mvp,type/story,priority/high,epic/ep7","Story","High","EP7","14h"
+"Share link with token","Secure shareable report links
+
+Epic: EP7
+Estimate: 10h","mvp,type/story,priority/high,epic/ep7","Story","High","EP7","10h"
+"Check history and notes","Broker workspace history and notes
+
+Epic: EP7
+Estimate: 12h","mvp,type/story,priority/high,epic/ep7","Story","High","EP7","12h"
+"Email/webhook report delivery","Send reports via email or webhook
+
+Epic: EP7
+Estimate: 8h","mvp,type/task,priority/medium,epic/ep7","Task","Medium","EP7","8h"
+"Test plan + smoke e2e","Define and run smoke end-to-end suite
+
+Epic: EP8
+Estimate: 14h","mvp,type/task,priority/highest,epic/ep8","Task","Highest","EP8","14h"
+"Search performance optimization","Tune latency for VIN search and card
+
+Epic: EP8
+Estimate: 12h","mvp,type/task,priority/highest,epic/ep8","Task","Highest","EP8","12h"
+"Security checklist and rate limits","Harden API and add rate limiting
+
+Epic: EP8
+Estimate: 12h","mvp,type/task,priority/highest,epic/ep8","Task","Highest","EP8","12h"
+"Product analytics funnel","Track key conversion funnel events
+
+Epic: EP8
+Estimate: 8h","mvp,type/task,priority/high,epic/ep8","Task","High","EP8","8h"
+"Production deploy + rollback runbook","Create release and rollback steps
+
+Epic: EP8
+Estimate: 10h","mvp,type/task,priority/highest,epic/ep8","Task","Highest","EP8","10h"
+"UAT bugfix buffer","Allocate final sprint bugfix capacity
+
+Epic: EP8
+Estimate: 20h","mvp,type/task,priority/highest,epic/ep8","Task","Highest","EP8","20h"

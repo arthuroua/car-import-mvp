@@ -1,0 +1,72 @@
+﻿:root {
+  --bg: #f6f8fc;
+  --text: #141b2d;
+  --panel: #ffffff;
+  --accent: #0b6ef3;
+  --muted: #5a6783;
+  --error: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #e3edff, var(--bg));
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid #dce3f2;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #c7d2ea;
+  border-radius: 8px;
+}
+
+button,
+.button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--error);
+  margin-top: 16px;
+}
+
+p {
+  color: var(--muted);
+}

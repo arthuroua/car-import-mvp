@@ -1,0 +1,49 @@
+﻿Issue Id,Issue Type,Summary,Epic Name,Epic Link,Priority,Original Estimate,Description,Labels
+EP1,Epic,Data Access & Legal,Data Access & Legal,,Highest,,Legal/data access for Copart + IAA and licensing compliance,mvp
+EP2,Epic,Core Platform,Core Platform,,Highest,,Project foundation: auth roles env logging,mvp
+EP3,Epic,VIN Search & Vehicle Card,VIN Search & Vehicle Card,,Highest,,VIN search and full vehicle card with timeline,mvp
+EP4,Epic,Ingestion Pipeline,Ingestion Pipeline,,Highest,,Ingestion jobs dedup and media pipeline,mvp
+EP5,Epic,Landed Cost Calculator,Landed Cost Calculator,,Highest,,Total landed cost engine and presets,mvp
+EP6,Epic,Max Bid Advisor,Max Bid Advisor,,Highest,,Recommended max bid with risk scenarios,mvp
+EP7,Epic,Reports & Broker Workspace,Reports & Broker Workspace,,High,,PDF reports and broker workspace,mvp
+EP8,Epic,QA Security Launch,QA Security Launch,,Highest,,Quality performance security and go-live,mvp
+BFX-1,Task,Legal requirements matrix,,EP1,Highest,8h,Create compliance matrix for data usage and display rights,mvp
+BFX-2,Task,Copart data onboarding,,EP1,Highest,12h,Apply and set up Copart data access and credentials,mvp
+BFX-3,Task,IAA B2B onboarding,,EP1,Highest,12h,Apply and set up IAA B2B/Data Service access,mvp
+BFX-4,Task,Source audit fields in DB,,EP1,Highest,6h,Add source fetched_at license_scope fields,mvp
+BFX-10,Task,Monorepo and CI/CD bootstrap,,EP2,Highest,10h,Initialize repo pipelines and environments,mvp
+BFX-11,Story,JWT auth and roles,,EP2,Highest,16h,Implement authentication and role-based access,mvp
+BFX-12,Story,Company/workspace access model,,EP2,Highest,12h,Implement company scoping and permissions,mvp
+BFX-13,Task,Secrets and config management,,EP2,Highest,6h,Set up secret storage and config layers,mvp
+BFX-14,Task,Observability and health checks,,EP2,Highest,10h,Error tracking logs and health endpoints,mvp
+BFX-20,Story,VIN normalizer and validator,,EP3,Highest,6h,Normalize and validate 17-char VIN input,mvp
+BFX-21,Story,Search API with cache,,EP3,Highest,14h,Build GET /search with cache strategy,mvp
+BFX-22,Story,Vehicle card aggregator API,,EP3,Highest,16h,Aggregate lots prices images into one payload,mvp
+BFX-23,Story,Frontend VIN search page,,EP3,Highest,14h,Build search interface with fast feedback,mvp
+BFX-24,Story,Frontend vehicle card + timeline,,EP3,Highest,20h,Build card UI with event timeline,mvp
+BFX-30,Task,Queue workers and scheduler,,EP4,Highest,16h,Set up job queue and scheduling,mvp
+BFX-31,Story,Copart ingestion connector,,EP4,Highest,20h,Implement Copart ingestion adapter,mvp
+BFX-32,Story,IAA ingestion connector,,EP4,Highest,20h,Implement IAA ingestion adapter,mvp
+BFX-33,Story,Dedup rules VIN+lot,,EP4,Highest,12h,Prevent duplicate lot records,mvp
+BFX-34,Story,Images ingestion + checksum,,EP4,Highest,14h,Store images with checksum for dedup,mvp
+BFX-35,Task,Retry backoff DLQ alerts,,EP4,Highest,12h,Add resilience and operational alerts,mvp
+BFX-36,Task,Nightly reconciliation job,,EP4,High,10h,Verify feed consistency every night,mvp
+BFX-40,Story,Cost profile model,,EP5,Highest,10h,Create DB model for port broker customs defaults,mvp
+BFX-41,Story,Calculator engine v1,,EP5,Highest,16h,Compute landed cost components,mvp
+BFX-42,Story,Calculator UI + presets,,EP5,Highest,14h,Build calculator forms and presets,mvp
+BFX-43,Story,UA/EU customs templates v1,,EP5,Highest,12h,Add first customs formulas templates,mvp
+BFX-44,Story,Low/base/high scenarios,,EP5,Highest,10h,Expose scenario-based outputs,mvp
+BFX-50,Story,MaxBid algorithm + explainability,,EP6,Highest,14h,Compute max bid and explain factors,mvp
+BFX-51,Story,Advisor calculate API,,EP6,Highest,10h,Build POST /advisor/calculate endpoint,mvp
+BFX-52,Story,MaxBid UI block,,EP6,Highest,12h,Show recommended max bid with scenario tabs,mvp
+BFX-53,Task,Assumptions versioning,,EP6,High,8h,Store assumptions and version metadata,mvp
+BFX-60,Story,PDF report generation,,EP7,High,14h,Generate client-facing PDF report,mvp
+BFX-61,Story,Share link with token,,EP7,High,10h,Secure shareable report links,mvp
+BFX-62,Story,Check history and notes,,EP7,High,12h,Broker workspace history and notes,mvp
+BFX-63,Task,Email/webhook report delivery,,EP7,Medium,8h,Send reports via email or webhook,mvp
+BFX-70,Task,Test plan + smoke e2e,,EP8,Highest,14h,Define and run smoke end-to-end suite,mvp
+BFX-71,Task,Search performance optimization,,EP8,Highest,12h,Tune latency for VIN search and card,mvp
+BFX-72,Task,Security checklist and rate limits,,EP8,Highest,12h,Harden API and add rate limiting,mvp
+BFX-73,Task,Product analytics funnel,,EP8,High,8h,Track key conversion funnel events,mvp
+BFX-74,Task,Production deploy + rollback runbook,,EP8,Highest,10h,Create release and rollback steps,mvp
+BFX-75,Task,UAT bugfix buffer,,EP8,Highest,20h,Allocate final sprint bugfix capacity,mvp
