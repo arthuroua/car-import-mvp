@@ -60,51 +60,74 @@ export default function SearchPage() {
   }
 
   return (
-    <main className="container">
-      <h1>VIN Search</h1>
-      <form onSubmit={onSubmit} className="panel">
-        <label htmlFor="vin">VIN</label>
-        <input
-          id="vin"
-          value={vin}
-          onChange={(e) => setVin(e.target.value)}
-          placeholder="Enter 17-char VIN"
-          minLength={17}
-          maxLength={17}
-          required
-        />
-        <button type="submit" disabled={loading}>
-          {loading ? "Loading..." : "Search"}
-        </button>
-      </form>
+    <main className="shell">
+      <section className="panel">
+        <p className="chip">VIN Intelligence</p>
+        <h1>VIN Search</h1>
+        <p className="lead">Enter a 17-character VIN to load auction history and sold-price trail.</p>
 
-      {error && <p className="error">{error}</p>}
+        <form onSubmit={onSubmit} className="searchForm">
+          <label htmlFor="vin">VIN</label>
+          <div className="searchRow">
+            <input
+              id="vin"
+              value={vin}
+              onChange={(e) => setVin(e.target.value)}
+              placeholder="Enter 17-char VIN"
+              minLength={17}
+              maxLength={17}
+              required
+            />
+            <button type="submit" disabled={loading}>
+              {loading ? "Loading" : "Search"}
+            </button>
+          </div>
+        </form>
+      </section>
+
+      {error && (
+        <section className="panel errorPanel">
+          <p>{error}</p>
+        </section>
+      )}
 
       {search && (
-        <section className="panel">
-          <h2>Search Result</h2>
-          <p>VIN: {search.vin}</p>
-          <p>Lots found: {search.lots_found}</p>
-          <p>Latest status: {search.latest_status}</p>
+        <section className="stats">
+          <article className="panel statCard">
+            <p className="label">VIN</p>
+            <h3>{search.vin}</h3>
+          </article>
+          <article className="panel statCard">
+            <p className="label">Lots Found</p>
+            <h3>{search.lots_found}</h3>
+          </article>
+          <article className="panel statCard">
+            <p className="label">Latest Status</p>
+            <h3>{search.latest_status}</h3>
+          </article>
         </section>
       )}
 
       {vehicle && (
         <section className="panel">
-          <h2>Vehicle Card</h2>
-          <p>
+          <p className="label">Vehicle Card</p>
+          <h2>
             {vehicle.year} {vehicle.make} {vehicle.model}
-          </p>
-          <p>Title brand: {vehicle.title_brand}</p>
+          </h2>
+          <p className="lead">Title brand: {vehicle.title_brand}</p>
 
-          <h3>Lots</h3>
-          <ul>
+          <div className="lotsGrid">
             {vehicle.lots.map((lot) => (
-              <li key={`${lot.source}-${lot.lot_number}`}>
-                {lot.source} #{lot.lot_number} | {lot.sale_date} | ${lot.hammer_price_usd} | {lot.status}
-              </li>
+              <article key={`${lot.source}-${lot.lot_number}`} className="lotCard">
+                <p className="label">{lot.source}</p>
+                <h3>Lot #{lot.lot_number}</h3>
+                <p>Date: {lot.sale_date}</p>
+                <p>Price: ${lot.hammer_price_usd}</p>
+                <p>Status: {lot.status}</p>
+                <p>Location: {lot.location}</p>
+              </article>
             ))}
-          </ul>
+          </div>
         </section>
       )}
     </main>
