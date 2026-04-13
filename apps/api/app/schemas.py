@@ -12,18 +12,18 @@ class SearchResult(BaseModel):
 class LotItem(BaseModel):
     source: str
     lot_number: str
-    sale_date: str
-    hammer_price_usd: int
-    status: str
-    location: str
+    sale_date: str | None = None
+    hammer_price_usd: int | None = None
+    status: str | None = None
+    location: str | None = None
 
 
 class VehicleCard(BaseModel):
     vin: str
-    make: str
-    model: str
-    year: int
-    title_brand: str
+    make: str | None = None
+    model: str | None = None
+    year: int | None = None
+    title_brand: str | None = None
     lots: list[LotItem]
 
 

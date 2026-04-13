@@ -10,17 +10,17 @@ type SearchResponse = {
 
 type VehicleResponse = {
   vin: string;
-  make: string;
-  model: string;
-  year: number;
-  title_brand: string;
+  make: string | null;
+  model: string | null;
+  year: number | null;
+  title_brand: string | null;
   lots: Array<{
     source: string;
     lot_number: string;
-    sale_date: string;
-    hammer_price_usd: number;
-    status: string;
-    location: string;
+    sale_date: string | null;
+    hammer_price_usd: number | null;
+    status: string | null;
+    location: string | null;
   }>;
 };
 
@@ -78,7 +78,8 @@ const DEFAULT_ADVISOR_FORM: AdvisorForm = {
   risk_buffer_usd: "900"
 };
 
-function toMoney(value: number): string {
+function toMoney(value: number | null | undefined): string {
+  if (value === null || value === undefined) return "-";
   return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(
     value
   );
@@ -116,6 +117,12 @@ export default function SearchPage() {
     if (!advisorResult) return new Map<string, number>();
     return new Map(advisorResult.scenarios.map((s) => [s.name, s.max_bid_usd]));
   }, [advisorResult]);
+
+  const vehicleTitle = useMemo(() => {
+    if (!vehicle) return "";
+    const parts = [vehicle.year?.toString(), vehicle.make, vehicle.model].filter((part) => !!part);
+    return parts.length > 0 ? parts.join(" ") : "Unknown vehicle";
+  }, [vehicle]);
 
   async function onSearchSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -287,20 +294,18 @@ export default function SearchPage() {
       {vehicle && (
         <section className="panel">
           <p className="label">Vehicle Card</p>
-          <h2>
-            {vehicle.year} {vehicle.make} {vehicle.model}
-          </h2>
-          <p className="lead">Title brand: {vehicle.title_brand}</p>
+          <h2>{vehicleTitle}</h2>
+          <p className="lead">Title brand: {vehicle.title_brand || "Unknown"}</p>
 
           <div className="lotsGrid">
             {vehicle.lots.map((lot) => (
               <article key={`${lot.source}-${lot.lot_number}`} className="lotCard">
                 <p className="label">{lot.source}</p>
                 <h3>Lot #{lot.lot_number}</h3>
-                <p>Date: {lot.sale_date}</p>
+                <p>Date: {lot.sale_date || "-"}</p>
                 <p>Price: {toMoney(lot.hammer_price_usd)}</p>
-                <p>Status: {lot.status}</p>
-                <p>Location: {lot.location}</p>
+                <p>Status: {lot.status || "-"}</p>
+                <p>Location: {lot.location || "-"}</p>
               </article>
             ))}
           </div>

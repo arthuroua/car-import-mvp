@@ -82,4 +82,5 @@ curl -X POST http://localhost:8000/api/v1/ingestion/process-one
 - This skeleton uses mock vehicle/lot data to unblock product and UI development.
 - Advisor reports are persisted in `advisor_reports` and linked to VIN.
 - Ingestion worker writes to `vehicles`, `lots`, `lot_images`, and `price_events` tables.
+- `GET /api/v1/search` and `GET /api/v1/vehicles/{vin}` read DB ingestion data first, then fallback to mock data.
 - Real data ingestion should be connected only through licensed Copart/IAA channels.
