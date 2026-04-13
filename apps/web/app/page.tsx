@@ -14,6 +14,9 @@ export default function HomePage() {
           <Link href="/search" className="button">
             Open VIN Search
           </Link>
+          <Link href="/ingestion" className="button">
+            Open Ingestion Admin
+          </Link>
         </div>
       </section>
 
