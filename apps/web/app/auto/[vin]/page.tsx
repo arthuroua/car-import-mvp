@@ -129,16 +129,6 @@ function toVehicleName(vehicle: VehicleResponse): string {
   return parts.length > 0 ? parts.join(" ") : "Vehicle";
 }
 
-function toVehicleMonogram(vehicle: VehicleResponse): string {
-  const source = [vehicle.make, vehicle.model].filter(Boolean).join(" ").trim() || vehicle.vin;
-  return source
-    .split(/[\s-]+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() || "")
-    .join("");
-}
-
 function toMoney(value: number | null | undefined): string {
   if (value === null || value === undefined) return "-";
   return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(
@@ -352,7 +342,6 @@ export default async function AutoSeoPage({ params }: PageProps) {
   const decoded = await getDecoded(vin);
   const market = await getMarket(vin);
   const vehicleName = toVehicleName(vehicle);
-  const vehicleMonogram = toVehicleMonogram(vehicle);
   const lots = vehicle.lots || [];
   const images = collectImages(lots);
   const latestLot = lots[0];
@@ -494,7 +483,6 @@ export default async function AutoSeoPage({ params }: PageProps) {
           ) : (
             <div className="spotlightEmpty autoNoPhotoPanel autoPhotoPlaceholder autoPhotoPlaceholderCompact">
               <div className="autoPhotoPlaceholderBadge">{dict.auto.photoPendingBadge}</div>
-              <strong>{vehicleMonogram}</strong>
               <h3>{vehicleName}</h3>
               <p>{dict.auto.photoPendingLead}</p>
             </div>

@@ -199,7 +199,7 @@ export const dictionaries = {
         images: "Images",
         photoPendingBadge: "Photos pending",
         photoPendingLead:
-          "Price, status, VIN, and auction specs are already saved. The image set for this completed lot has not been delivered by the source yet.",
+          "Photos for this lot have not been pulled in yet. Price, status, and VIN are already saved.",
         knowTitle: "What matters for this vehicle",
       lotsTitle: "Lot history",
       updateLogTitle: "Update log",
@@ -502,7 +502,7 @@ export const dictionaries = {
         images: "Фото",
         photoPendingBadge: "Фото очікуються",
         photoPendingLead:
-          "Ціна, статус, VIN і характеристики вже збережені. Набір фото для цього завершеного лота джерело ще не віддало в імпорт.",
+          "Фото для цього лота ще не підтягнулися. Ціна, статус і VIN уже збережені.",
         knowTitle: "Що важливо знати по цьому авто",
       lotsTitle: "Історія лотів",
       updateLogTitle: "Лог оновлень",
@@ -805,7 +805,7 @@ export const dictionaries = {
         images: "Фото",
         photoPendingBadge: "Фото ожидаются",
         photoPendingLead:
-          "Цена, статус, VIN и характеристики уже сохранены. Набор фото для этого завершённого лота источник ещё не отдал в импорт.",
+          "Фото для этого лота еще не подтянулись. Цена, статус и VIN уже сохранены.",
         knowTitle: "Что важно знать по этому авто",
       lotsTitle: "История лотов",
       updateLogTitle: "Лог обновлений",
