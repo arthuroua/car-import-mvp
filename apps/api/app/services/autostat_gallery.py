@@ -77,13 +77,15 @@ def _dedupe(urls: list[str]) -> list[str]:
     return result
 
 
-def _build_vin_url(vin: str) -> str | None:
+def _build_vin_url(vin: str, lot_number: str | None = None) -> str | None:
     template = os.getenv("AUTOSTAT_VIN_URL_TEMPLATE", "").strip()
     if not template:
         return None
     if "{vin}" not in template:
         return None
-    return template.format(vin=vin.upper())
+    if "{lot_number}" in template and not lot_number:
+        return None
+    return template.format(vin=vin.upper(), lot_number=(lot_number or "").upper())
 
 
 def _fetch_html(url: str) -> str:
@@ -105,7 +107,7 @@ def fetch_autostat_gallery_images(vin: str, lot_number: str | None = None) -> li
     if not _env_bool("AUTOSTAT_ENABLED", False):
         return []
 
-    url = _build_vin_url(vin)
+    url = _build_vin_url(vin, lot_number)
     if not url:
         return []
 
