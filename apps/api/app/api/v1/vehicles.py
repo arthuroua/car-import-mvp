@@ -47,7 +47,7 @@ def _is_direct_image_url(url: str) -> bool:
 def _public_media_allowed_hosts() -> tuple[str, ...]:
     raw = os.getenv(
         "MEDIA_PROXY_ALLOWED_HOSTS",
-        "copart.com,copart.io,iaai.com,vis.iaai.com,riastatic.com,auto.ria.com",
+        "copart.com,copart.io,iaai.com,vis.iaai.com,riastatic.com,auto.ria.com,autoastat.com,autostat.org,autostat.md",
     )
     return tuple(host.strip().lower().lstrip(".") for host in raw.split(",") if host.strip())
 
