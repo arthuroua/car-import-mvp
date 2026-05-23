@@ -11,6 +11,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
 from app.models import Lot, LotImage, LotImportSnapshot, MediaAsset
+from app.services.autostat_gallery import fetch_autostat_gallery_images
 from app.services.copart_gallery import fetch_copart_gallery_images
 from app.services.iaai_gallery import fetch_iaai_gallery_images
 from app.services.media_archive import archive_image, public_media_url
@@ -146,6 +147,8 @@ def _provider_candidates(db: Session, lot: Lot) -> list[str]:
         add_many(fetch_copart_gallery_images(lot.lot_number))
     elif lot.source.lower() == "iaai":
         add_many(fetch_iaai_gallery_images(lot.lot_number, vin=lot.vin))
+
+    add_many(fetch_autostat_gallery_images(lot.vin, lot.lot_number))
 
     snapshots = sorted(lot.import_snapshots, key=_sort_snapshot_key, reverse=True)
     for snapshot in snapshots:
